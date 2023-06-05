@@ -46,7 +46,7 @@ export default function Header() {
             Json Placeholder
           </Link>
 
-          <Link to="about-us" className="py-2 text-dark text-decoration-none">
+          <Link to={"about"} className="py-2 text-dark text-decoration-none">
             About Us
           </Link>
         </nav>

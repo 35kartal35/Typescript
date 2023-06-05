@@ -40,15 +40,7 @@ export class JsonPlaceholderApi {
   }
 
   async users(start?: number, limit?: number) {
-    // asenkron bölgedeyken bu kadar uğraşmaya gerek kalmaz.
-    //this.axiosClient
-    //  .get("users")
-    //  .then((response) => {
-    //    console.log(response);
-    //  })
-    //  .catch((err) => {
-    //    console.log(err);
-    //  });
+    
 
     let result: AxiosResponse<JsonPlaceholderUserType[]> =
       await this.axiosClient.get<JsonPlaceholderUserType[]>("users", {
@@ -73,14 +65,7 @@ export class JsonPlaceholderApi {
     start?: number,
     limit?: number
   ): Promise<JsonPlaceholderAlbumType[]> {
-    /**
-     * albums?userId=3&_start=0&_limit=3
-     * {
-     *    userId: 3
-     *    _start: 0
-     *    _limit: 3
-     * }
-     */
+   
     let result: AxiosResponse<JsonPlaceholderAlbumType[]> =
       await this.axiosClient.get<JsonPlaceholderAlbumType[]>("albums", {
         params: {
@@ -94,7 +79,7 @@ export class JsonPlaceholderApi {
   }
 
   async posts(userId?: number, start?: number, limit?: number) {
-    // TODO any türünü belirle.
+    
     let result: AxiosResponse<any[]> = await this.axiosClient.get<any[]>(
       "posts",
       {
@@ -111,12 +96,6 @@ export class JsonPlaceholderApi {
 }
 
 export default function useJsonPlaceholderApi(): JsonPlaceholderApi {
-  /**
-   * `.env` dosyasındaki bir değere ulaşmak için o değerin `VITE_` ifadesiyle
-   * prefixlenmiş olması gerekir. Bunu yaptıktan sonra tam olarak
-   * şu şekilde dataya ulaşabiliriz:
-   * `import.meta.env.VITE_API_BASE_URL`
-   */
-
+  
   return new JsonPlaceholderApi(import.meta.env.VITE_API_BASE_URL);
 }

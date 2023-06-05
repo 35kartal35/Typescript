@@ -11,8 +11,9 @@ import JsonPlaceholderPage from "./pages/json-placeholder-page";
 import JsonPlaceholderUserDetailPage from "./pages/json-placeholder-user-detail-page";
 import JsonPlaceholderAlbumDetailPage from "./pages/json-placeholder-album-detail-page";
 import JsonPlaceholderPostDetailPage from "./pages/json-placeholder-post-detail-page";
-import useApi from "./hooks/useApi";
+import useApi from "../src/hooks/useApi"
 import axios from "axios";
+import AboutUs from "./pages/about-page";
 
 function App() {
   /*
@@ -48,7 +49,9 @@ function App() {
                 element={<JsonPlaceholderPostDetailPage />}
               />
             </Route>
+            
           </Route>
+          <Route path="about" element={<AboutUs/>}/>
         </Routes>
 
         <Footer />
